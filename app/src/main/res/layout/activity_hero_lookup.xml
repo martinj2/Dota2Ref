@@ -1,0 +1,1599 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_hero_lookup"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.jenniemartin.dota2ref.HeroLookupActivity">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout0"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".05"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal">
+
+        <RadioButton
+            android:text="@string/displayHeroPic_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/heroPicRadioButton"
+            android:layout_weight="1"
+            android:checked="true" />
+
+
+
+
+        <RadioButton
+            android:text="@string/displayHeroName_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/heroNameRadioButton"
+            android:layout_weight="1"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout1"
+        android:layout_gravity="center_horizontal"
+        android:visibility="invisible">
+
+
+        <Spinner
+            android:id="@+id/heroSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="6dp"
+            android:prompt="@string/spin_prompt"
+            android:entries="@array/heroes_array"
+            android:spinnerMode="dialog"
+            android:focusable="true" />
+
+    </LinearLayout>
+
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".9"
+        android:id="@+id/scrollview"
+        android:visibility="visible">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/linearLayout2"
+            android:visibility="visible">
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/abaddon_tile"
+                    android:id="@+id/abaddonImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/alchemist_tile"
+                    android:id="@+id/alchemistImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ancientapp_tile"
+                    android:id="@+id/ancientAppImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/antimage_tile"
+                    android:id="@+id/antiMageImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/arcwarden_tile"
+                    android:id="@+id/arcWardImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/axe_tile"
+                    android:id="@+id/axeImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/bane_tile"
+                    android:id="@+id/baneImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/batrider_tile"
+                    android:id="@+id/batriderImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/beastmaster_tile"
+                    android:id="@+id/beastmastImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/bloodseeker_tile"
+                    android:id="@+id/bloodImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/bounty_tile"
+                    android:id="@+id/bountyImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/brewmaster_tile"
+                    android:id="@+id/brewImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout6"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/bristleback_tile"
+                    android:id="@+id/bristleImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/broodmother_tile"
+                    android:id="@+id/broodImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/centaurwar_tile"
+                    android:id="@+id/centwarImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/chaosknight_tile"
+                    android:id="@+id/ckImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout7"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/chen_tile"
+                    android:id="@+id/chenImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/clinkz_tile"
+                    android:id="@+id/clinkzImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/clockwerk_tile"
+                    android:id="@+id/clockImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/crystalmaiden_tile"
+                    android:id="@+id/crystalImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout8"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/darkseer_tile"
+                    android:id="@+id/darkseerImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/dazzle_tile"
+                    android:id="@+id/dazzleImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/dp_tile"
+                    android:id="@+id/dpImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/disruptor_tile"
+                    android:id="@+id/disruptImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout9"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/doom_tile"
+                    android:id="@+id/doomImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/dragonknight_tile"
+                    android:id="@+id/dragonknImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/drow_tile"
+                    android:id="@+id/drowImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/earthspirit_tile"
+                    android:id="@+id/earthspImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayout10"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/earthshaker_tile"
+                    android:id="@+id/earthshakeImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/eldertitan_tile"
+                    android:id="@+id/eldertitanImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/emberspirit_tile"
+                    android:id="@+id/emberImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/enchantress_tile"
+                    android:id="@+id/enchantImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout11"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/enigma_tile"
+                    android:id="@+id/enigmaImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/faceless_tile"
+                    android:id="@+id/facelessImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/gyrocopter_tile"
+                    android:id="@+id/gyroImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/huskar_tile"
+                    android:id="@+id/huskarImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout12"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/invoker_tile"
+                    android:id="@+id/invokerImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/io_tile"
+                    android:id="@+id/ioImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/jakiro_tile"
+                    android:id="@+id/jakiroImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/juggernaut_tile"
+                    android:id="@+id/juggImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout13"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/keeperoflight_tile"
+                    android:id="@+id/keeperImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/kunkka_tile"
+                    android:id="@+id/kunkkaImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/legion_tile"
+                    android:id="@+id/legionImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/leshrac_tile"
+                    android:id="@+id/leshracImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout14"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/lich_tile"
+                    android:id="@+id/lichImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/lifestealer_tile"
+                    android:id="@+id/lifestealerImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/lina_tile"
+                    android:id="@+id/linaImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/lion_tile"
+                    android:id="@+id/lionImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout15"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/lonedruid_tile"
+                    android:id="@+id/lonedruidImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/luna_tile"
+                    android:id="@+id/lunaImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/lycan_tile"
+                    android:id="@+id/lycanImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/magnus_tile"
+                    android:id="@+id/magnusImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout16"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/medusa_tile"
+                    android:id="@+id/medusaImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/meepo_tile"
+                    android:id="@+id/meepoImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/mirana_tile"
+                    android:id="@+id/miranaImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/morphling_tile"
+                    android:id="@+id/morphlingImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout17"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/nagasiren_tile"
+                    android:id="@+id/nagasirenImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/naturesprophet_tile"
+                    android:id="@+id/naturesprophetImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/necrophos_tile"
+                    android:id="@+id/necrophosImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/nightstalker_tile"
+                    android:id="@+id/nightstalkerImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout19"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/nyx_tile"
+                    android:id="@+id/nyxImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ogremagi_tile"
+                    android:id="@+id/ogreImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/omni_tile"
+                    android:id="@+id/omniImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/oracle_tile"
+                    android:id="@+id/oracleImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayout20"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/outworld_tile"
+                    android:id="@+id/outworldImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/pa_tile"
+                    android:id="@+id/paImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/pl_tile"
+                    android:id="@+id/plImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/phoenix_tile"
+                    android:id="@+id/phoenixImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayout21"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/puck_tile"
+                    android:id="@+id/puckImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/pudge_tile"
+                    android:id="@+id/pudgeImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/pugna_tile"
+                    android:id="@+id/pugnaImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/queenofpain_tile"
+                    android:id="@+id/qpImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayout22"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/razor_tile"
+                    android:id="@+id/razorImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/riki_tile"
+                    android:id="@+id/rikiImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/rubick_tile"
+                    android:id="@+id/rubickImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/sandking_tile"
+                    android:id="@+id/sandImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayout23"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/shadowdemon_tile"
+                    android:id="@+id/demonImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/shadowfiend_tile"
+                    android:id="@+id/fiendImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/shadowshaman_tile"
+                    android:id="@+id/shamanImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/silencer_tile"
+                    android:id="@+id/silencerImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayout24"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/skywrath_tile"
+                    android:id="@+id/skywrathImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/slardar_tile"
+                    android:id="@+id/slardarImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/slark_tile"
+                    android:id="@+id/slarkImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/sniper_tile"
+                    android:id="@+id/sniperImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayout25"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/spectre_tile"
+                    android:id="@+id/spectreImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/spiritbreaker_tile"
+                    android:id="@+id/spiritbImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/stormspirit_tile"
+                    android:id="@+id/stormImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/sven_tile"
+                    android:id="@+id/svenImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayout26"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/techies_tile"
+                    android:id="@+id/techiesImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/templar_tile"
+                    android:id="@+id/templarImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/terrorblade_tile"
+                    android:id="@+id/terrorbladeImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/tidehunter_tile"
+                    android:id="@+id/tideImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayout27"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/timbersaw_tile"
+                    android:id="@+id/timbersawImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/tinker_tile"
+                    android:id="@+id/tinkerImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/tiny_tile"
+                    android:id="@+id/tinyImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/treant_tile"
+                    android:id="@+id/treantImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayout28"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/trollwarlord_tile"
+                    android:id="@+id/trollwarImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/tusk_tile"
+                    android:id="@+id/tuskImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/underlord_tile"
+                    android:id="@+id/underlordImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/undying_tile"
+                    android:id="@+id/undyingImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayout29"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ursa_tile"
+                    android:id="@+id/ursaImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/vengeful_tile"
+                    android:id="@+id/vengefulImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/venomancer_tile"
+                    android:id="@+id/venomImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/viper_tile"
+                    android:id="@+id/viperImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayout30"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/visage_tile"
+                    android:id="@+id/visageImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/warlock_tile"
+                    android:id="@+id/warlockImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/weaver_tile"
+                    android:id="@+id/weaverImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/windranger_tile"
+                    android:id="@+id/windImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout31"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="75dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/winterwyv_tile"
+                    android:id="@+id/winterwyvImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/witchdoctor_tile"
+                    android:id="@+id/witchdoctorImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/wraithking_tile"
+                    android:id="@+id/wraithImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/zeus_tile"
+                    android:id="@+id/zeusImageButton"
+                    android:layout_weight=".25"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/background_dark"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/herotile_contentdesc"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="0dp"
+        android:layout_weight=".1">
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/mainHeroMenuButton"
+            android:text="@string/mainmenu_label"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+</LinearLayout>

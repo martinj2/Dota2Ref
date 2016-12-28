@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.jenniemartin.dota2ref.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutTotal"
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/appNameTextView"
+            android:text="@string/app_intro"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center_horizontal"
+            android:textAllCaps="true"
+            android:textSize="24sp"
+            android:textStyle="normal|bold"
+            android:textColor="@android:color/black" />
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            app:srcCompat="@drawable/dota_logo"
+            android:id="@+id/dotaLogoImageView"
+            android:layout_marginBottom="5dp"
+            android:contentDescription="@string/logo_contentdesc"/>
+        </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+
+
+        <Button
+            android:text="@string/mainHero_label"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/HeroButton" />
+
+        <Button
+            android:text="@string/bgs_label"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/BGSButton" />
+
+        <Button
+            android:text="@string/mainItem_label"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/ItemsButton" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
+
+    <TextView
+        android:text="@string/mainCopyright_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/copyrightLabelTextView"
+        android:layout_marginTop="15dp"
+        android:textSize="10sp"
+        android:textStyle="italic"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"/>
+
+
+</RelativeLayout>

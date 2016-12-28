@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_hero"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.jenniemartin.dota2ref.HeroActivity"
+    android:gravity="bottom">
+
+    <LinearLayout
+        android:id="@+id/linearLayout0"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="175"
+        >
+
+
+        <ImageView
+            android:id="@+id/heroImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:maxHeight="150dp"
+            android:minHeight="150dp"
+            android:layout_margin="10dp"
+            android:contentDescription="@string/herobody_contentdesc"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/nameLabelTextView"
+            android:text="@string/name_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/heroNameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textSize="15sp"
+            android:textStyle="normal|bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutOne"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/akaLabelTextView"
+            android:text="@string/aka_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/akaNameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textSize="15sp"
+            android:textStyle="normal|italic" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/quoteTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_margin="10dp"
+        android:textStyle="normal|bold|italic"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutTwo"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_weight="1">
+
+        <TextView
+
+            android:id="@+id/roleLabelTextView"
+            android:text="@string/role_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:textSize="15sp"/>
+
+        <TextView
+
+            android:id="@+id/heroRoleTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".25"
+            android:textSize="15sp" />
+
+
+        <TextView
+
+            android:id="@+id/primLabelTextView"
+            android:text="@string/pa_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".25"
+            android:textSize="15sp"
+            />
+
+        <TextView
+
+            android:id="@+id/paTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".25"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayoutThree"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/loreLabelTextView"
+            android:text="@string/lore_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_weight="2"
+            />
+
+        <ScrollView
+            android:id="@+id/scroll"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_weight="9"
+
+            >
+
+            <LinearLayout
+                android:id="@+id/linearLayoutFour"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                >
+
+
+                <TextView
+                    android:id="@+id/loreTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="15dp"    />
+            </LinearLayout>
+        </ScrollView>
+        </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutFive"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1">
+
+
+    <Button
+
+        android:id="@+id/abilityButton"
+        android:text="@string/ability_label"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom = "5dp"
+        android:layout_marginRight="35dp"
+        android:layout_weight="3"
+        android:layout_gravity="bottom|start" />
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_weight=".5"
+            android:layout_height="wrap_content"
+            android:src = "@drawable/menu_icon"
+            android:id = "@+id/menuHeroButton"
+            android:layout_gravity="bottom|end"
+            android:contentDescription="@string/menu_content_desc"/>
+
+        </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,2046 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_item_lookup"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.jenniemartin.dota2ref.ItemLookupActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout0"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".05"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal">
+
+        <RadioButton
+            android:text="@string/displayItemPic_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/itemPicRadioButton"
+            android:layout_weight="1"
+            android:checked="true" />
+
+
+        <RadioButton
+            android:text="@string/displayItemName_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/itemNameRadioButton"
+            android:layout_weight="1"
+            android:checked="false" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:orientation="vertical"
+        android:id="@+id/itemNameLayout"
+        android:layout_gravity="center_horizontal"
+        android:visibility="invisible">
+
+
+        <Spinner
+            android:id="@+id/itemSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="6dp"
+            android:prompt="@string/spinItem_prompt"
+            android:entries="@array/item_array"
+            android:spinnerMode="dialog"
+            android:focusable="true" />
+
+    </LinearLayout>
+
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".9"
+        android:id="@+id/itemPicScroll"
+        android:visibility="visible">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".95"
+            android:orientation="vertical"
+            android:id="@+id/itemPictureLayout"
+            android:visibility="visible">
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/abyssalblade"
+                    android:id="@+id/abyssalImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/aetherlens"
+                    android:id="@+id/aetherImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/aghanimsscepter"
+                    android:id="@+id/agsImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/animalcourier"
+                    android:id="@+id/courierImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/arcaneboots"
+                    android:id="@+id/arcaneImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/armletofmordiggian"
+                    android:id="@+id/armletImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/assaultcuirass"
+                    android:id="@+id/assaultImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/bandofelvenskin"
+                    android:id="@+id/bandImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/battlefury"
+                    android:id="@+id/bfuryImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/beltofstrength"
+                    android:id="@+id/bStrengthImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/blackkingbar"
+                    android:id="@+id/bkbImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/blademail"
+                    android:id="@+id/blademailImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/bladeofalacrity"
+                    android:id="@+id/alacImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/bladesofattack"
+                    android:id="@+id/bladesAttImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/blightstone"
+                    android:id="@+id/blightImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight=".1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/blinkdagger"
+                    android:id="@+id/blinkImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/bloodstone"
+                    android:id="@+id/bloodstoneImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/bloodthorn"
+                    android:id="@+id/bloodthornImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/bootsofspeed"
+                    android:id="@+id/bSpeedImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/bootsoftravel"
+                    android:id="@+id/bTravImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/bottle"
+                    android:id="@+id/bottleImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/bracer"
+                    android:id="@+id/bracerImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/broadsword"
+                    android:id="@+id/broadImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/buckler"
+                    android:id="@+id/bucklerImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/butterfly"
+                    android:id="@+id/butterflyImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout6"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/chainmail"
+                    android:id="@+id/chainmailImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/circlet"
+                    android:id="@+id/circletImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/clarity"
+                    android:id="@+id/clarityImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/claymore"
+                    android:id="@+id/claymoreImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/cloak"
+                    android:id="@+id/cloakImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout7"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/crimsonguard"
+                    android:id="@+id/crimsonImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/crystalys"
+                    android:id="@+id/crystalImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/daedalus"
+                    android:id="@+id/daedImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/dagon"
+                    android:id="@+id/dagonImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/demonedge"
+                    android:id="@+id/demonImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayout8"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/desolator"
+                    android:id="@+id/desoImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/diffusalblade"
+                    android:id="@+id/diffusalImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/divinerapier"
+                    android:id="@+id/rapierImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/dragonlance"
+                    android:id="@+id/dragonImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/drumofendurance"
+                    android:id="@+id/drumImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout9"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/dust"
+                    android:id="@+id/dustImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/eaglesong"
+                    android:id="@+id/eagleImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/echosabre"
+                    android:id="@+id/echoImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/enchantedmango"
+                    android:id="@+id/mangoImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/energybooster"
+                    android:id="@+id/energyboosterImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout10"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/etherealblade"
+                    android:id="@+id/etherealImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/eulsscepter"
+                    android:id="@+id/eulsImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/eyeofskadi"
+                    android:id="@+id/eyeImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/faeriefire"
+                    android:id="@+id/faerieImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/flyingcourier"
+                    android:id="@+id/fcourierImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout11"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/forcestaff"
+                    android:id="@+id/forceImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/gauntletsofs"
+                    android:id="@+id/gauntletsImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/gemoftruesight"
+                    android:id="@+id/gemImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ghostscepter"
+                    android:id="@+id/ghostImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/glimmercape"
+                    android:id="@+id/glimmerImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout12"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/glovesofhaste"
+                    android:id="@+id/glovesImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/guardiangreaves"
+                    android:id="@+id/guardianImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/handofmidas"
+                    android:id="@+id/midasImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/headdress"
+                    android:id="@+id/headdressImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/healingsalve"
+                    android:id="@+id/salveImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout13"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/heart"
+                    android:id="@+id/heartImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/heavenshalberd"
+                    android:id="@+id/heavenImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/helmofironwill"
+                    android:id="@+id/helmIronImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/helmofthedom"
+                    android:id="@+id/helmDomImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/hoodofdefiance"
+                    android:id="@+id/hoodDefImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout14"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/hurricanepike"
+                    android:id="@+id/hurricaneImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/hyperstone"
+                    android:id="@+id/hyperstoneImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/infusedraindrop"
+                    android:id="@+id/raindropImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ironbranch"
+                    android:id="@+id/ironBranchImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/irontalon"
+                    android:id="@+id/ironTalonImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout15"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/javelin"
+                    android:id="@+id/javelinImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/linkenssphere"
+                    android:id="@+id/linkensImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/lotusorb"
+                    android:id="@+id/lotusImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/maelstrom"
+                    android:id="@+id/maelImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/magicstick"
+                    android:id="@+id/magicStickImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout16"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/magicwand"
+                    android:id="@+id/magicWandImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/mantastyle"
+                    android:id="@+id/mantaImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/mantleofintel"
+                    android:id="@+id/mantleImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/maskofmadness"
+                    android:id="@+id/maskMadImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/medallionofcourage"
+                    android:id="@+id/medalcourImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout17"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/mekansm"
+                    android:id="@+id/mekImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/mithrilhammer"
+                    android:id="@+id/mithrilImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/mjollnir"
+                    android:id="@+id/mjollImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/monkeykingbar"
+                    android:id="@+id/mkbImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/moonshard"
+                    android:id="@+id/moonImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout18"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/morbidmask"
+                    android:id="@+id/morbidImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/mysticstaff"
+                    android:id="@+id/mysticImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/necronomicon"
+                    android:id="@+id/necronomImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/nulltalisman"
+                    android:id="@+id/nullTalImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/oblivionstaff"
+                    android:id="@+id/oblivionImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout19"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/observerward"
+                    android:id="@+id/obsWardImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/octarinecore"
+                    android:id="@+id/octarineImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ogreclub"
+                    android:id="@+id/ogreImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/orbofvenom"
+                    android:id="@+id/venomImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/orchidmalevolence"
+                    android:id="@+id/orchidImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout20"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/perseverance"
+                    android:id="@+id/persImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/phaseboots"
+                    android:id="@+id/phaseImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/pipeofinsight"
+                    android:id="@+id/pipeImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/platemail"
+                    android:id="@+id/platemailImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/pointbooster"
+                    android:id="@+id/pointImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout21"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/poormansshield"
+                    android:id="@+id/poorImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/powertreads"
+                    android:id="@+id/powerImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/quarterstaff"
+                    android:id="@+id/quarterImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/quellingblade"
+                    android:id="@+id/quellImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/radiance"
+                    android:id="@+id/radianceImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout22"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/reaver"
+                    android:id="@+id/reaverImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/refresherorb"
+                    android:id="@+id/refresherImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ringofaquila"
+                    android:id="@+id/aquilaImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ringofbasilius"
+                    android:id="@+id/basiliusImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ringofhealth"
+                    android:id="@+id/healthImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout23"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ringofprotection"
+                    android:id="@+id/protectionImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ringofregen"
+                    android:id="@+id/regenImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/robeofthemagi"
+                    android:id="@+id/robeImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/rodofatos"
+                    android:id="@+id/atosImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/sacredrelic"
+                    android:id="@+id/sacredRelicImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout24"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/sagesmask"
+                    android:id="@+id/sageImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/sange"
+                    android:id="@+id/sangeImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/sangeandyasha"
+                    android:id="@+id/sangeYashaImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/satanic"
+                    android:id="@+id/satanicImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/scytheofvyse"
+                    android:id="@+id/scytheImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout25"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/sentryward"
+                    android:id="@+id/sentryImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/shadowamulet"
+                    android:id="@+id/shadowAmuletImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/shadowblade"
+                    android:id="@+id/shadowBladeImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/shivasguard"
+                    android:id="@+id/shivasImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/silveredge"
+                    android:id="@+id/silverImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout26"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/skullbasher"
+                    android:id="@+id/skullImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/slippersofagility"
+                    android:id="@+id/slippersImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/smokeofdeceit"
+                    android:id="@+id/smokeImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/solarcrest"
+                    android:id="@+id/solarImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/soulbooster"
+                    android:id="@+id/soulBoostImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout27"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/soulring"
+                    android:id="@+id/soulRingImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/staffofwizardry"
+                    android:id="@+id/staffImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/stoutshield"
+                    android:id="@+id/stoutImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/talismanofevasion"
+                    android:id="@+id/talismanImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/tango"
+                    android:id="@+id/tangoImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout28"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/tomeofknowledge"
+                    android:id="@+id/tomeImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/townportalscroll"
+                    android:id="@+id/tpsImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/tranquilboots"
+                    android:id="@+id/tranquilImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ultimateorb"
+                    android:id="@+id/ultimateImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/urnofshadows"
+                    android:id="@+id/urnImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout29"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/vanguard"
+                    android:id="@+id/vanguardImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/veilofdiscord"
+                    android:id="@+id/veilImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/vitalitybooster"
+                    android:id="@+id/vitalityImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/vladmiroffering"
+                    android:id="@+id/vladmirImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/voidstone"
+                    android:id="@+id/voidImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout30"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/windlace"
+                    android:id="@+id/windLaceImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/wraithband"
+                    android:id="@+id/wraithImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/yasha"
+                    android:id="@+id/yashaImageButton"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/black"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/item_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="?android:attr/colorBackground"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/blank_contentdesc"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="?android:attr/colorBackground"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/blank_contentdesc"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="0dp"
+        android:layout_weight=".1">
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/mainMenuButton"
+            android:text="@string/mainmenu_label"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+</LinearLayout>
